@@ -1,0 +1,5 @@
+export OPEN_PDKS_COMMIT=13e0611f6a27fd6e601f8fe207773233f4f3883f
+export SKYWATER_COMMIT=c094b6e83a4f9298e47f696ec5a7fd53535ec5eb
+export PDK_ROOT=/home/$USER/Desktop/pdk_root
+export CARAVEL_LITE=0
+export SUBMODULE=0

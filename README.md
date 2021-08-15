@@ -1,18 +1,24 @@
-# Caravel Analog User
+# ArmleoPC_sky130
+ArmleoPC_sky130 is a System-on-Chip integrating ArmleoCPU dual-core RV32IMA CPU capable of booting Linux taped out using Skywater 130nm Technology and open source standard cell library. See: https://github.com/armleo/ArmleoPC_sky130  
+Currently this repository is empty but in the future will contain Caravel/Caravan based auto-build project using GitHub CI.  
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![UPRJ_CI](https://github.com/efabless/caravel_user_project_analog/actions/workflows/user_project_ci.yml/badge.svg)](https://github.com/efabless/caravel_user_project_analog/actions/workflows/user_project_ci.yml) [![Caravan Build](https://github.com/efabless/caravel_user_project_analog/actions/workflows/caravan_build.yml/badge.svg)](https://github.com/efabless/caravel_user_project_analog/actions/workflows/caravan_build.yml)
+Block diagram  
+<img src="docs/Block diagram.png" alt="ArmleoPC structure" width="400"/>
 
----
+# ArmleoCPU
+ArmleoCPU is RISC-V CPU with Atomics, Multiplier/divider, Cache, MMU, TLB, and will be capable of booting Linux. Two small area cores will be implemented, providing 0.6 IPC @ ~50-75MHz, mainly limited by I/O.
 
-| :exclamation: Important Note            |
-|-----------------------------------------|
+GitHub where everything happens: https://github.com/armleo/ArmleoCPU
 
-## Please fill in your project documentation in this README.md file 
+# SoC
+System includes JTAG for debugging, timers, UARTs, SPIs and GPIO alongside a memory controller.
 
+Memory controller implements PSRAM/Flash controller with combined FPGA connection interface.
 
-:warning: | Use this sample project for analog user projects. 
-:---: | :---
+If enough time is left then IQ Modulator/Demodulator with external PLL will be designed.
 
----
+# Limitations
+The main limitation for this project is GPIO speed which is limited to 33MHz and the lack of GPIO pins (only ~38). If possible custom GPIO cells will be implemented with a target VDDIO of 1.8V or 3V3 depending on which we can achieve reasonable speeds.
 
-Refer to [README](docs/source/index.rst) for this sample project documentation. 
+# Links
+You can see top level repository with all the links and short descriptions here: https://github.com/armleo/ArmleoPC
